@@ -432,7 +432,7 @@ async def create_peptide(data: PeptideCreate):
         peptide_data["calculated_iu"] = calculated_iu
         
         peptide = Peptide(**peptide_data)
-        peptide_dict = peptide.dict()
+        peptide_dict = json.loads(json.dumps(peptide.dict(), cls=DateTimeEncoder))
         
         await db.peptides.insert_one(peptide_dict)
         return peptide
