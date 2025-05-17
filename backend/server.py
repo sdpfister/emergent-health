@@ -336,7 +336,7 @@ async def update_body_measurement(measurement_id: str, data: BodyMeasurementCrea
     # Update the updated_at timestamp
     updated_measurement.updated_at = datetime.utcnow()
     
-    await db.body_measurements.replace_one({"id": measurement_id}, updated_measurement.dict())
+    await db.body_measurements.replace_one({"id": measurement_id}, json.loads(json.dumps(updated_measurement.dict(), cls=DateTimeEncoder)))
     return updated_measurement
 
 @api_router.delete("/body-measurements/{measurement_id}")
