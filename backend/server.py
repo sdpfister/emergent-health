@@ -9,6 +9,14 @@ from pydantic import BaseModel, Field, field_validator, ValidationError
 from typing import List, Optional, Dict, Union, Any
 import uuid
 from datetime import datetime, date
+import json
+
+# Define a JSONEncoder subclass to handle date objects
+class DateTimeEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, (datetime, date)):
+            return obj.isoformat()
+        return super().default(obj)
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
