@@ -405,7 +405,7 @@ const WeightForm = ({ isEdit = false }) => {
           </label>
           <textarea
             id="notes"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
             rows="3"
             {...register('notes')}
           ></textarea>
@@ -548,7 +548,7 @@ const MeasurementsForm = ({ isEdit = false }) => {
           </label>
           <textarea
             id="notes"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
             rows="3"
             {...register('notes')}
           ></textarea>
@@ -947,7 +947,7 @@ const PeptideForm = ({ isEdit = false }) => {
                 Frequency
               </label>
               <select 
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
                 {...register('schedule.frequency')}
               >
                 {frequencyOptions.map(option => (
@@ -1014,7 +1014,7 @@ const PeptideForm = ({ isEdit = false }) => {
               </label>
               <input
                 type="text"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="e.g., Mon,Wed,Fri"
                 {...register('schedule.custom_days')}
               />
@@ -1026,7 +1026,7 @@ const PeptideForm = ({ isEdit = false }) => {
               </label>
               <input
                 type="text"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="e.g., 8:00,20:00"
                 {...register('schedule.custom_times')}
               />
@@ -1060,7 +1060,7 @@ const PeptideForm = ({ isEdit = false }) => {
               Notes
             </label>
             <textarea
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
               rows="3"
               {...register('notes')}
             ></textarea>
@@ -1343,7 +1343,7 @@ const SupplementForm = ({ isEdit = false }) => {
                 Frequency
               </label>
               <select 
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
                 {...register('schedule.frequency')}
                 defaultValue="daily"
               >
@@ -1413,7 +1413,7 @@ const SupplementForm = ({ isEdit = false }) => {
               </label>
               <input
                 type="text"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="e.g., Mon,Wed,Fri"
                 {...register('schedule.custom_days')}
               />
@@ -1425,7 +1425,7 @@ const SupplementForm = ({ isEdit = false }) => {
               </label>
               <input
                 type="text"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="e.g., 8:00,20:00"
                 {...register('schedule.custom_times')}
               />
@@ -1459,7 +1459,7 @@ const SupplementForm = ({ isEdit = false }) => {
               Notes
             </label>
             <textarea
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
               rows="3"
               {...register('notes')}
             ></textarea>
@@ -1845,7 +1845,7 @@ const HealthMarkerForm = ({ isEdit = false }) => {
           </label>
           <textarea
             id="notes"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
             rows="3"
             {...register('notes')}
           ></textarea>
