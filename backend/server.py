@@ -350,7 +350,7 @@ async def delete_body_measurement(measurement_id: str):
 @api_router.post("/supplements", response_model=Supplement)
 async def create_supplement(data: SupplementCreate):
     supplement = Supplement(**data.dict())
-    supplement_dict = supplement.dict()
+    supplement_dict = json.loads(json.dumps(supplement.dict(), cls=DateTimeEncoder))
     await db.supplements.insert_one(supplement_dict)
     return supplement
 
