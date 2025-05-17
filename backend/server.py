@@ -304,7 +304,7 @@ async def delete_health_marker(marker_id: str):
 @api_router.post("/body-measurements", response_model=BodyMeasurement)
 async def create_body_measurement(data: BodyMeasurementCreate):
     body_measurement = BodyMeasurement(**data.dict())
-    body_measurement_dict = body_measurement.dict()
+    body_measurement_dict = json.loads(json.dumps(body_measurement.dict(), cls=DateTimeEncoder))
     await db.body_measurements.insert_one(body_measurement_dict)
     return body_measurement
 
