@@ -5,7 +5,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, validator, ValidationError
+from pydantic import BaseModel, Field, field_validator, ValidationError
 from typing import List, Optional, Dict, Union, Any
 import uuid
 from datetime import datetime, date
@@ -155,7 +155,7 @@ class PeptideCalculation(BaseModel):
     bac_water_ml: float
     dose_mcg: float
     
-    @validator('vial_amount_mg', 'bac_water_ml', 'dose_mcg')
+    @field_validator('vial_amount_mg', 'bac_water_ml', 'dose_mcg')
     def validate_positive(cls, v, info):
         if v <= 0:
             field_name = info.field_name.replace('_', ' ').title()
@@ -193,7 +193,7 @@ class PeptideCreate(BaseModel):
     start_date: Optional[date] = None
     end_date: Optional[date] = None
     
-    @validator('vial_amount_mg', 'bac_water_ml', 'dose_mcg')
+    @field_validator('vial_amount_mg', 'bac_water_ml', 'dose_mcg')
     def validate_positive(cls, v, info):
         if v <= 0:
             field_name = info.field_name.replace('_', ' ').title()
