@@ -382,7 +382,7 @@ async def update_supplement(supplement_id: str, data: SupplementCreate):
     # Update the updated_at timestamp
     updated_supplement.updated_at = datetime.utcnow()
     
-    await db.supplements.replace_one({"id": supplement_id}, updated_supplement.dict())
+    await db.supplements.replace_one({"id": supplement_id}, json.loads(json.dumps(updated_supplement.dict(), cls=DateTimeEncoder)))
     return updated_supplement
 
 @api_router.delete("/supplements/{supplement_id}")
