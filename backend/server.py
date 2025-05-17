@@ -258,7 +258,7 @@ async def delete_body_composition(composition_id: str):
 @api_router.post("/health-markers", response_model=HealthMarker)
 async def create_health_marker(data: HealthMarkerCreate):
     health_marker = HealthMarker(**data.dict())
-    health_marker_dict = health_marker.dict()
+    health_marker_dict = json.loads(json.dumps(health_marker.dict(), cls=DateTimeEncoder))
     await db.health_markers.insert_one(health_marker_dict)
     return health_marker
 
