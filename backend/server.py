@@ -203,6 +203,7 @@ class PeptideCreate(BaseModel):
     end_date: Optional[date] = None
     
     @field_validator('vial_amount_mg', 'bac_water_ml', 'dose_mcg')
+    @classmethod
     def validate_positive(cls, v, info):
         if v <= 0:
             field_name = info.field_name.replace('_', ' ').title()
