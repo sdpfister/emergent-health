@@ -244,7 +244,7 @@ async def update_body_composition(composition_id: str, data: BodyCompositionCrea
     # Update the updated_at timestamp
     updated_composition.updated_at = datetime.utcnow()
     
-    await db.body_compositions.replace_one({"id": composition_id}, updated_composition.dict())
+    await db.body_compositions.replace_one({"id": composition_id}, json.loads(json.dumps(updated_composition.dict(), cls=DateTimeEncoder)))
     return updated_composition
 
 @api_router.delete("/body-composition/{composition_id}")
