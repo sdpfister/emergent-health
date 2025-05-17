@@ -212,7 +212,7 @@ class PeptideCreate(BaseModel):
 @api_router.post("/body-composition", response_model=BodyComposition)
 async def create_body_composition(data: BodyCompositionCreate):
     body_composition = BodyComposition(**data.dict())
-    body_composition_dict = body_composition.dict()
+    body_composition_dict = json.loads(json.dumps(body_composition.dict(), cls=DateTimeEncoder))
     await db.body_compositions.insert_one(body_composition_dict)
     return body_composition
 
