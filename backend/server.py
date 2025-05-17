@@ -290,7 +290,7 @@ async def update_health_marker(marker_id: str, data: HealthMarkerCreate):
     # Update the updated_at timestamp
     updated_marker.updated_at = datetime.utcnow()
     
-    await db.health_markers.replace_one({"id": marker_id}, updated_marker.dict())
+    await db.health_markers.replace_one({"id": marker_id}, json.loads(json.dumps(updated_marker.dict(), cls=DateTimeEncoder)))
     return updated_marker
 
 @api_router.delete("/health-markers/{marker_id}")
