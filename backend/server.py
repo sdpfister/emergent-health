@@ -156,9 +156,9 @@ class PeptideCalculation(BaseModel):
     dose_mcg: float
     
     @validator('vial_amount_mg', 'bac_water_ml', 'dose_mcg')
-    def validate_positive(cls, v, field):
+    def validate_positive(cls, v, info):
         if v <= 0:
-            field_name = field.name.replace('_', ' ').title()
+            field_name = info.field_name.replace('_', ' ').title()
             raise ValueError(f'{field_name} must be greater than 0')
         return v
     
