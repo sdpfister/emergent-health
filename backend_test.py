@@ -62,8 +62,9 @@ class HealthTrackerAPITester:
     def test_body_composition(self):
         """Test body composition endpoints"""
         # Create a new body composition entry
+        today_str = datetime.now().strftime("%Y-%m-%d")
         data = {
-            "date": date.today().isoformat(),
+            "date": today_str,
             "weight": 180.5,
             "body_fat_percentage": 15.2,
             "muscle_mass": 150.3,
