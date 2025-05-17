@@ -175,8 +175,9 @@ class HealthTrackerAPITester:
     def test_health_markers(self):
         """Test health markers endpoints"""
         # Create a new health marker entry
+        today_str = datetime.now().strftime("%Y-%m-%d")
         data = {
-            "date": date.today().isoformat(),
+            "date": today_str,
             "blood_pressure": {
                 "systolic": 120,
                 "diastolic": 80,
