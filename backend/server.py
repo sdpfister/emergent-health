@@ -478,7 +478,7 @@ async def update_peptide(peptide_id: str, data: PeptideCreate):
     updated_peptide.calculated_iu = calculated_iu
     updated_peptide.updated_at = datetime.utcnow()
     
-    await db.peptides.replace_one({"id": peptide_id}, updated_peptide.dict())
+    await db.peptides.replace_one({"id": peptide_id}, json.loads(json.dumps(updated_peptide.dict(), cls=DateTimeEncoder)))
     return updated_peptide
 
 @api_router.delete("/peptides/{peptide_id}")
