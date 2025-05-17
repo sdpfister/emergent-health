@@ -48,7 +48,7 @@ const FormField = ({ label, name, register, error, type = "text", ...rest }) => 
       type={type}
       className={`shadow appearance-none border ${
         error ? "border-red-500" : ""
-      } rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+      } rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500`}
       {...register(name)}
       {...rest}
     />
