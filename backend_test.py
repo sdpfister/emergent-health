@@ -119,8 +119,9 @@ class HealthTrackerAPITester:
     def test_body_measurements(self):
         """Test body measurements endpoints"""
         # Create a new body measurement entry
+        today_str = datetime.now().strftime("%Y-%m-%d")
         data = {
-            "date": date.today().isoformat(),
+            "date": today_str,
             "chest": 42.5,
             "waist": 34.0,
             "hips": 40.2,
